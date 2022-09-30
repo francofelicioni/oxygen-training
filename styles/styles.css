@@ -6,7 +6,6 @@
   text-decoration: none; }
 
 html {
-  margin: 0 auto;
   scroll-behavior: smooth; }
 
 body {
@@ -26,7 +25,8 @@ body {
   height: 70px;
   padding: 1rem 2rem;
   background-color: #FFFFFF;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29); }
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+  display: flex; }
   .header .logo p {
     width: 206px;
     height: 2.3125rem;
@@ -38,11 +38,24 @@ body {
   .header .navInput {
     display: none; }
   .header .navLabel {
-    cursor: pointer; }
-    .header .navLabel .burguer-menu {
-      display: block;
-      height: 2.1875rem;
-      width: 1.25rem; }
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    position: relative;
+    align-self: center;
+    padding: 0 1rem 1rem 0; }
+    .header .navLabel #span1, .header .navLabel #span2, .header .navLabel #span3 {
+      position: absolute;
+      content: '';
+      background-color: #08A6E4;
+      width: 30px;
+      height: 3px;
+      border-radius: 3px;
+      transition: all 400ms ease; }
+    .header .navLabel #span2 {
+      top: 11px; }
+    .header .navLabel #span3 {
+      top: 22px; }
   .header .nav-bar {
     position: fixed;
     top: 70px;
@@ -75,8 +88,16 @@ body {
           color: #95989A; }
         .header .nav-bar .nav-bar-ul li .nav-item:hover {
           color: #000000; }
-  .header .navInput:checked + .nav-bar {
+  .header .navInput:checked + .nav-bar-container .nav-bar {
     clip-path: circle(100% at center); }
+  .header .navInput:checked + .nav-bar-container .navLabel #span1 {
+    transform: rotate(140deg);
+    top: 10px; }
+  .header .navInput:checked + .nav-bar-container .navLabel #span2 {
+    opacity: 0; }
+  .header .navInput:checked + .nav-bar-container .navLabel #span3 {
+    transform: rotate(-140deg);
+    top: 10px; }
 
 #why-us .why-us_fc {
   padding-top: 100px; }
