@@ -10,26 +10,22 @@
 <body>
     <header class="header">
         <a href="#" class="logo"><p>OXIGENShop</p></a>
+        <label for="menu" class="navLabel">
+            <img src="./assets/burger-menu.svg" class="navImg">
+        </label> 
+        <input type="checkbox" id="menu" class="navInput">
         <nav class="nav-bar">
             <ul class="nav-bar-ul">
-                <li>
-                    <a class="nav-item" href="#why-us">WHY US</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#benefits">BENEFITS</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#pricing">PRICES</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#contact">CONTACT</a>
-                </li>
+                <li> <a class="nav-item" href="#why-us">WHY US</a> </li>
+                <li> <a class="nav-item" href="#benefits">BENEFITS</a> </li>
+                <li> <a class="nav-item" href="#pricing">PRICES</a> </li>
+                <li> <a class="nav-item" href="#contact">CONTACT</a> </li>
             </ul>
         </nav>
-        <label for="check" class="navLabel">
-            <img src="./images/burger-menu.svg" class="burguer-menu"/>
+        <!-- <label for="check" class="navLabel">
+            <img src="./assets/burger-menu.svg" class="burguer-menu"/>
         </label>
-        <input type="checkbox" id="check" class="navInput">
+        <input type="checkbox" id="check" class="navInput"> -->
     </header>
     <div id="why-us">
         <div class="why-us_fc">
@@ -37,7 +33,7 @@
             <p class="why-us_fc_p">Open shop on our platform and increase your sales</p>
             <button class="why-us_fc_button">Open your shop</button>
             <div class="why-us_fc_img-container"> 
-                <img src="./images/why-us-hero.jpg" alt="Hero" class="why-us_img"/>
+                <img src="./assets/why-us-hero.jpg" alt="Hero" class="why-us_img"/>
             </div>
         </div>
         <div class="why-us_sc">
@@ -45,21 +41,21 @@
             <div class="why-us_sc_reasons">
                 <div class="why-us_sc_reasons_1">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./images/person.svg" />
+                        <img src="./assets/person.svg" />
                     </div>
                     <p>100000+</p>
                     <h3>daily entries</h3>
                 </div>
                 <div class="why-us_sc_reasons_2">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./images/eye.svg" />
+                        <img src="./assets/eye.svg" />
                     </div>
                     <p>2000000+</p>
                     <h3>seen products every day</h3>
                 </div>
                 <div class="why-us_sc_reasons_3">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./images/catalog.svg" />
+                        <img src="./assets/catalog.svg" />
                     </div>
                     <p>10000+</p>
                     <h3>added post daily</h3>
@@ -69,9 +65,9 @@
     </div>
     <div id="benefits">
         <div class="benefits_container">
-            <div class="benefits_container_benefit">
+            <div class="benefits_container_benefit responsive_reverse">
                 <div class="benefits_container_benefit_img">
-                    <img src="./images/macbook.png" />
+                    <img src="./assets/macbook.png" />
                     <div class="benefits_container_benefit_circle"></div>
                 </div>
                 <div>
@@ -79,10 +75,10 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
             </div>
-            <div class="benefits_container_benefit">
+            <div class="benefits_container_benefit responsive">
                 <div>
                     <div class="benefits_container_benefit_img blue-circle">
-                        <img src="./images/iphone.png" />
+                        <img src="./assets/iphone.png" />
                         <div class="benefits_container_benefit_circle"></div>
                     </div>
                 </div>
@@ -91,14 +87,16 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>    
             </div>
-            <div class="benefits_container_third">
-                <div class="benefits_container_benefit_third_h2-p">
-                    <h2>Increase recognition your brand! </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <div class="benefits_container_third_responsive">
+                <div class="benefits_container_third">
+                    <div class="benefits_container_benefit_third_h2-p">
+                        <h2>Increase recognition your brand! </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="benefits_container_trumpet">
-                <img src="./images/trumpet.png" alt="Trumpet">
+                <div class="benefits_container_third_trumpet">
+                    <img src="./assets/trumpet.png" alt="Trumpet">
+                </div>
             </div>
         </div>
     </div>
@@ -113,23 +111,23 @@
                 <div class="pricing-detail"> 
                     <ul>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>100 MB HDD</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>1 Subdomain</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>2 E-mails</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/x.jpg">
+                            <img class="icon" src="./assets/x.jpg">
                             <p>Two years license</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/x.jpg">
+                            <img class="icon" src="./assets/x.jpg">
                             <p>Full support</p>
                         </li>
                     </ul>
@@ -145,23 +143,23 @@
                 <div class="pricing-detail">
                     <ul>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>500 MB HDD</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>2 Subdomain</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>5 E-mails</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>One years license</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/x.jpg">
+                            <img class="icon" src="./assets/x.jpg">
                             <p>Full support</p>
                         </li>
                     </ul>
@@ -177,23 +175,23 @@
                 <div class="pricing-detail"> 
                     <ul>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>2 GB HDD</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>5 Subdomain</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>20 E-mails</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>Two years license</p>
                         </li>
                         <li class="pricing-li">
-                            <img class="icon" src="./images/check.jpg">
+                            <img class="icon" src="./assets/check.jpg">
                             <p>Full support</p>
                         </li>
                     </ul>
@@ -203,45 +201,49 @@
         </div>
     </div>
     <div id="contact">
-        <div class="contact-container">
-            <h2>Any questions?</h2>
-            <p>Leave your email address or call us!</p>
-        </div>
-        <div class="contact-info">
-            <div>
-                <img src="./images/mail.jpg">
-                <a href="mailto:info@bestshop.xyz">info@bestshop.xyz</a>
+        <div>
+            <div class="contact-container">
+                <h2>Any questions?</h2>
+                <p>Leave your email address or call us!</p>
             </div>
-            <div>
-                <img src="./images/phone.jpg">
-                <a href="tel:123456789">123 456 789</a>
-            </div>
-        </div>
-        <div class="contact-form">
-            <form>
-                <label class="label-title">NAME</label><br>
-                <input type="text"><br>
-                <label class="label-title">EMAIL</label><br>
-                <input type="email"><br>
+            <div class="contact-info">
                 <div>
-                    <input type="checkbox">
-                    <label>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</label><br>
+                    <img src="./assets/mail.jpg">
+                    <a href="mailto:info@bestshop.xyz">info@bestshop.xyz</a>
                 </div>
-                <div class="btn-submit-container">
-                    <button type="submit" class="btn-submit">Send</button>
-                </div>   
-            </form>
+                <div>
+                    <img src="./assets/phone.jpg">
+                    <a href="tel:123456789">123 456 789</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="contact-form">
+                <form>
+                    <label class="label-title">NAME</label><br>
+                    <input type="text"><br>
+                    <label class="label-title">EMAIL</label><br>
+                    <input type="email"><br>
+                    <div>
+                        <input type="checkbox" class="contact_form_checkbox">
+                        <label>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</label><br>
+                    </div>
+                    <div class="btn-submit-container">
+                        <button type="submit" class="btn-submit">Send</button>
+                    </div>   
+                </form>
+            </div>
         </div>
     </div>
     <footer class="footer">
         
         <div class="logo-container">
-            <img src="./images/logo.jpg">
+            <img src="./assets/logo.jpg">
             <p>© 2022 OXYGEN, All Rights Reserved</p>
         </div>
         <div class="social-container">
-            <a href="twitter.com"><img src="./images/twitter.jpg" /></a>
-            <a href="facebook.com"><img src="./images/facebook.jpg" /></a>
+            <a href="twitter.com"><img src="./assets/twitter.jpg" /></a>
+            <a href="facebook.com"><img src="./assets/facebook.jpg" /></a>
         </div>
        
     </footer>
