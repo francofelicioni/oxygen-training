@@ -78,7 +78,6 @@ body {
   .header .navInput:checked + .nav-bar {
     clip-path: circle(100% at center); }
 
-@use '_variables';
 #why-us .why-us_fc {
   padding-top: 100px; }
   #why-us .why-us_fc .why-us_fc_title {
@@ -114,12 +113,15 @@ body {
     line-height: 1.375rem;
     text-align: center;
     border: none; }
+  #why-us .why-us_fc .why-us_fc_button {
+    background: #08A6E4; }
+  #why-us .why-us_fc .why-us_fc_button:hover {
+    background: #078fc5; }
   #why-us .why-us_fc .why-us_fc_img-container {
     overflow: hidden; }
     #why-us .why-us_fc .why-us_fc_img-container .why-us_img {
-      height: inherit;
-      margin-top: 20%;
-      object-fit: contain;
+      height: 300px;
+      object-fit: fill;
       margin-left: 50%;
       transform: translateX(-50%); }
 
@@ -253,6 +255,8 @@ body {
       margin: 2rem 0;
       width: 314px;
       height: 370px; }
+      #benefits .benefits_container .benefits_container_benefit .benetis_line {
+        display: none; }
       #benefits .benefits_container .benefits_container_benefit .benefits_container_benefit_img {
         position: relative; }
         #benefits .benefits_container .benefits_container_benefit .benefits_container_benefit_img img {
@@ -281,7 +285,7 @@ body {
       #benefits .benefits_container .benefits_container_benefit p {
         font: "Open Sans", "sans-serif";
         padding: 0 0 1.5rem 0;
-        margin: 1rem 0;
+        margin: 1rem 0 2.5rem 0;
         width: 272px;
         height: 77px;
         font-weight: 400;
@@ -409,6 +413,20 @@ body {
         position: absolute;
         left: 25%;
         top: 92%; }
+        #pricing .pricing-container .basic .pricing-btn pricin-btn:hover {
+          background-color: #FB3B64; }
+      #pricing .pricing-container .basic .pricing-btn:hover {
+        width: 150px;
+        height: 50px;
+        border-radius: 23px;
+        color: #FFFFFF;
+        border: none;
+        background-color: #DC4716;
+        position: absolute;
+        left: 25%;
+        top: 92%; }
+        #pricing .pricing-container .basic .pricing-btn:hover pricin-btn:hover {
+          background-color: #DC4716; }
     #pricing .pricing-container .basic:hover, #pricing .pricing-container .premium:hover, #pricing .pricing-container .professional:hover {
       width: 339px;
       height: 277px;
@@ -450,6 +468,22 @@ body {
         position: absolute;
         left: 25%;
         top: 92%; }
+        #pricing .pricing-container .professional .pricing-btn pricin-btn:hover {
+          background-color: #07ACE6; }
+      #pricing .pricing-container .professional .pricing-btn:hover {
+        width: 150px;
+        height: 50px;
+        border-radius: 23px;
+        color: #FFFFFF;
+        border: none;
+        background-color: #078fc5;
+        position: absolute;
+        left: 25%;
+        top: 92%;
+        width: 180px;
+        height: 55px; }
+        #pricing .pricing-container .professional .pricing-btn:hover pricin-btn:hover {
+          background-color: #078fc5; }
     #pricing .pricing-container .professional:hover {
       width: 339px;
       height: 277px;
@@ -489,6 +523,22 @@ body {
         position: absolute;
         left: 25%;
         top: 92%; }
+        #pricing .pricing-container .premium .pricing-btn pricin-btn:hover {
+          background-color: #55DFB4; }
+      #pricing .pricing-container .premium .pricing-btn:hover {
+        width: 150px;
+        height: 50px;
+        border-radius: 23px;
+        color: #FFFFFF;
+        border: none;
+        background-color: #29d69f;
+        position: absolute;
+        left: 25%;
+        top: 92%;
+        width: 180px;
+        height: 55px; }
+        #pricing .pricing-container .premium .pricing-btn:hover pricin-btn:hover {
+          background-color: #29d69f; }
     #pricing .pricing-container .premium:hover {
       width: 339px;
       height: 277px;
@@ -549,6 +599,8 @@ body {
         color: #FFFFFF;
         border: none;
         justify-content: flex-end; }
+      #contact .contact-form form .btn-submit-container .btn-submit:hover {
+        background: #078fc5; }
 
 .footer {
   display: flex;
@@ -558,7 +610,9 @@ body {
   box-shadow: 0px -5px 40px rgba(0, 0, 0, 0.2); }
   .footer .logo-container {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start; }
   .footer .social-container {
     display: flex;
     justify-content: space-between;
@@ -620,15 +674,23 @@ body {
       display: flex;
       align-self: center; }
       #why-us .why-us_fc .why-us_fc_img-container .why-us_img {
-        height: inherit;
+        height: 100%;
         object-fit: contain;
         width: 100%; }
-    #why-us .why-us_sc .why-us_sc_reasons, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_1, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_2, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_3 {
-      justify-content: center;
-      width: 60%;
-      flex-direction: row; }
-      #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_1, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_2, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_3 {
-        flex-direction: column; }
+    #why-us .why-us_fc .why-us_fc_img-container {
+      display: flex;
+      align-self: center; }
+      #why-us .why-us_fc .why-us_fc_img-container .why-us_img {
+        object-fit: contain;
+        width: 100%; }
+    #why-us .why-us_sc {
+      padding-bottom: 5%; }
+      #why-us .why-us_sc .why-us_sc_reasons, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_1, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_2, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_3 {
+        justify-content: center;
+        width: 60%;
+        flex-direction: row; }
+        #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_1, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_2, #why-us .why-us_sc .why-us_sc_reasons .why-us_sc_reasons_3 {
+          flex-direction: column; }
   #benefits {
     display: flex; }
     #benefits .benefits_container {
@@ -637,9 +699,15 @@ body {
       #benefits .benefits_container .responsive_reverse {
         display: flex;
         flex-direction: row-reverse; }
+        #benefits .benefits_container .responsive_reverse .benefits_line {
+          border-top: 4px solid #FB3B64;
+          width: 80%; }
       #benefits .benefits_container .responsive {
         display: flex;
         flex-direction: row; }
+        #benefits .benefits_container .responsive .benefits_line {
+          border-top: 4px solid #07ACE6;
+          width: 80%; }
       #benefits .benefits_container .benefits_container_benefit {
         width: 800px;
         justify-content: space-around; }
@@ -649,15 +717,24 @@ body {
         align-items: flex-end;
         gap: 2rem; }
         #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third {
-          width: 400px; }
+          height: 370px;
+          width: 450px;
+          padding: 2rem 0 0 2rem; }
+          #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third .benefits_line {
+            border-top: 4px solid #55DFB4;
+            width: 60%; }
+          #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third .benefits_container_benefit_third_h2-p h2 {
+            width: 300px; }
+          #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third .benefits_container_benefit_third_h2-p p {
+            width: 330px; }
         #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third_trumpet {
-          width: 370px;
-          height: 297px;
+          height: 370px;
+          width: 320px;
           margin: 0; }
           #benefits .benefits_container .benefits_container_third_responsive .benefits_container_third_trumpet .trumpet_img {
-            padding-top: 80px; }
+            padding-top: 110px; }
   #pricing {
-    margin: 2rem 0; }
+    margin: 4rem 0; }
   .pricing-container {
     display: flex;
     justify-content: center;
@@ -690,4 +767,7 @@ body {
       flex-direction: row;
       gap: 1rem; }
     #contact .contact-form {
-      max-width: 500px; } }
+      max-width: 500px; }
+  .footer {
+    display: flex;
+    justify-content: space-around; } }
