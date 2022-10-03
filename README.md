@@ -1,6 +1,8 @@
-Welcome to the module 1 of Fullstack React training w. Oxygen Academy (https://oxygenacademy.es/) 👋
+<h1> OXYGENShop </h1>
 
-Follow these steps to review: 👇
+Welcome to the module 1 of Fullstack React training w. [Oxygen Academy](https://oxygenacademy.es/) 👋
+
+<h2>Follow these steps to review: 👇 </h2>
 
 **1)** Clone this respositorie
 
@@ -8,6 +10,12 @@ Follow these steps to review: 👇
 
 **3)** Within your terminal, this should be located in '.fullstack-reac-training/module-1'
 
-**4)** Type on it start index.html and checkout your browser
+**4)** Type on it `start index.html` and checkout your browser ✨
 
 **5)** Thanks for watching!
+
+<h2>Autor ✒️</h2>
+The project was done by:
+
+Franco Felicioni
+https://www.linkedin.com/in/francofelicioni/
