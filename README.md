@@ -2,12 +2,12 @@ Welcome to the module 1 of Fullstack React training w. Oxygen Academy (https://o
 
 Follow these steps to review: 👇
 
-<b>1)</b> Clone this respositorie
+**1)** Clone this respositorie
 
-<b>2)</b> Make sure you are in the right branch
+**2)** Make sure you are in the right branch
 
-<b>3)</b> Within your terminal, this should be located in '.fullstack-reac-training/module-1'
+**3)** Within your terminal, this should be located in '.fullstack-reac-training/module-1'
 
-<b>4)</b> Type on it start index.html and checkout your browser
+**4)** Type on it start index.html and checkout your browser
 
-<b>5)</b> Thanks for watching!
+**5)** Thanks for watching!
