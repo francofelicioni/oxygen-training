@@ -1,0 +1,146 @@
+// @use '_variables';
+
+#benefits {
+    padding: 2.5rem 1.75rem;
+    background: $gray-background;
+
+    .benefits_container {
+
+        @include flex-column-container;
+        align-items: center;
+
+        .benefits_container_benefit {
+            @include flex-column-container;
+            align-items:center;
+            padding: 1rem;
+            background: $white;
+            border: 1px solid $gray-border;
+            border-radius: 5px;
+            margin: 2rem 0 ;
+            width: 314px;
+            height: 370px;
+
+            .benetis_line {
+                display: none;
+            }
+
+            .benefits_container_benefit_img {
+                position: relative;
+
+                img {
+                    position: relative;
+                    margin: 1rem 0;
+                    z-index: 2;
+                }
+
+                .benefits_container_benefit_circle {
+                    position: absolute;
+                    border-radius: 41px;
+                    transform: rotate(-45deg);
+                    width: 90.12px;
+                    height: 90.12px;
+                    top: 0px;
+                    left: 110px;
+                    background-color: $red;
+                }
+            }
+
+            h2 {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding: .5rem 0;
+                width: 218px;
+                height: 70px;
+                font-weight: 400;
+                font-size: 1.875rem;
+                line-height: 2.1875rem;
+            }
+    
+            p {
+                font: $font-text;
+                padding: 0 0 1.5rem 0;
+                margin: 1rem 0 2.5rem 0;
+                width: 272px;
+                height: 77px;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.375rem;
+                color: $black;
+    
+            }
+
+            .blue-circle{
+                .benefits_container_benefit_circle {
+                    position: absolute;
+                    border-radius: 50%;
+                    width: 131.88px;
+                    height: 131.7px;
+                    top: 3px;
+                    left: 10px;
+                    background-color: $blue;
+                }
+            }
+        }
+
+    }
+
+    .benefits_container_third {
+        width: 314px;
+        height: 298px;
+        padding: 1rem 0 1rem 0;
+        margin: 2rem 0 0 0 ;
+        background: $white;
+        border: 1px solid $gray-border;
+        border-radius: 5px;
+
+        .benefits_container_benefit_third_h2-p {
+            padding: 1rem 1rem 0 1rem;  
+
+                h2 {
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    margin: 1rem 0;
+                    padding: .5rem 0;
+                    width: 218px;
+                    height: 70px;
+                    font-weight: 400;
+                    font-size: 1.875rem;
+                    line-height: 2.1875rem;
+                }
+            
+                p {
+                    font: $font-text;
+                    padding: 1rem 0;
+                    margin: 2rem 0;
+                    width: 272px;
+                    height: 77px;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 1.375rem;
+                    color: $black;
+                }
+        }
+    } 
+
+    .benefits_container_third_trumpet{
+        align-items:center;
+        padding: 0 0 1rem 0;
+        background: $green;
+        border: 1px solid $gray-border;
+        border-radius: 5px;
+        margin: 0 0 2rem 0 ;
+        width: 314px;
+        height: 195px;
+        position: relative;
+        
+        .img {
+            width: 100%;
+            position: absolute;
+            bottom:6px;
+            left:0%;
+            margin-top: 10%;
+        }
+    }
+}

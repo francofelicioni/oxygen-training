@@ -1,0 +1,123 @@
+.header {
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    @include flex-row-container;
+    align-items: center; 
+    width: 100vw;
+    height: 70px;
+    padding: 1rem 2rem;
+    background-color: $white;
+    box-shadow: 0px 3px 6px $box-shadow;
+    display: flex;
+
+    .logo p {
+        width: 206px;
+        height: 2.3125rem;
+        line-height: 1em;
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 2.3125rem;
+        color: $light-blue;
+    }
+
+    .navInput {
+        display: none;
+    }
+
+    .navLabel{
+        cursor: pointer;
+        width: 50px;
+        height: 30px;
+        position: relative;
+        align-self: center;
+        padding: 0 1rem 1rem 0;
+
+        #span1, #span2, #span3 {
+            position: absolute;
+            content: '';
+            background-color: $light-blue;
+            width: 30px;
+            height: 3px;
+            border-radius: 3px;
+            transition: all 400ms ease;
+        }
+
+        #span2{
+            top:11px;
+        }
+        #span3{
+            top:22px;
+        }
+
+        
+    }
+
+    .nav-bar {
+        position: fixed;
+        top:70px;
+        bottom: 80%;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        justify-content: start;
+        clip-path: circle(0 at center);
+        // clip-path: circle(100% at center);
+        transition: ease-in-out 1s;
+
+        .nav-bar-ul {
+            background-color: $white;
+            box-shadow: 0px 4px 4px $box-shadow;
+            border: 1.5px solid $light-blue;
+            
+            li {
+                width: 200px;
+                padding: 1rem 0;
+                transition: ease 1s;
+
+                .nav-item {
+                    padding: 2rem 0 0 2rem;
+                    width: 60px;
+                    height: 15px;
+                    font-weight: 700;
+                    font-size: 11px;
+                    line-height: 15px;
+                    text-align: center;
+                    letter-spacing: 3.28px;
+                    color: $gray;
+                }
+
+                .nav-item:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+    
+    .nav-bar.active{
+        clip-path: circle(100% at center);
+    }
+
+    // .navInput:checked + .nav-bar-container .nav-bar {
+    //     clip-path: circle(100% at center);
+    // }
+
+    .navLabel.animation #span1 {
+        transform: rotate(140deg);
+        top:10px;
+    }
+    .navLabel.animation #span2 {
+        opacity: 0;
+    }
+    .navLabel.animation #span3 {
+        transform: rotate(-140deg);
+        top:10px;
+    
+    }
+}
+
+
+
+

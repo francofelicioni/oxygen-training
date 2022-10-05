@@ -1,0 +1,145 @@
+// @use '_variables';
+$pricing-btn-width: 150px;
+$pricing-btn-height: 50px; 
+
+.icon {
+    width: 11px;
+    height: 11px;
+}
+
+#pricing {
+
+    margin-top: 2rem;
+
+    .pricing-title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .pricing-container-title {
+        @include flex-column-container();
+        
+        p {
+            width: 74px;
+            height: 0.875rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 0.875rem;
+            text-align: center;
+        }
+    }
+
+    .pricing-li {
+        @include pricing-li();
+    }
+
+    // Estilos específicos
+    .pricing-container {
+        @include flex-column-container;
+        align-items: center;
+        
+        // Basic
+        .basic {
+            @include pricing-container ($red);
+        
+            .pricing-detail ul li {
+                padding: .6rem 0;
+            }
+
+            .basic-p {
+                @include pricing-p ($red);
+            }
+
+            .pricing-btn {
+                @include pricing-btn ($red);
+            }
+            
+            .pricing-btn:hover {
+                @include pricing-btn ($red-hover);
+            }
+
+        }
+
+        
+
+        
+        .basic:hover, .premium:hover, .professional:hover  {
+            width: 339px;
+            height: 277px;
+            box-shadow: 5px 10px 27px $red;
+
+            .pricing-btn {
+                width: $pricing-btn-width *1.2;
+                height: $pricing-btn-height *1.1 ;
+            }
+        }
+
+        // .pricing-btn:hover {
+        //     width: $pricing-btn-width *1.2;
+        //     height: $pricing-btn-height *1.1 ;
+        // }
+
+        // Professional
+        .professional {
+            @include pricing-container ($light-blue-shadow);
+
+            .pricing-detail ul li {
+                padding: .6rem 0;
+            }
+
+            .professional-p {
+                @include pricing-p ($light-blue-shadow);
+            }
+            
+            .pricing-btn {
+                @include pricing-btn ($blue);
+            }
+
+            .pricing-btn:hover {
+                @include pricing-btn ($light-blue-hover);
+                width: $pricing-btn-width *1.2;
+                height: $pricing-btn-height *1.1 ;
+            }
+        }
+
+        .professional:hover {
+            width: 339px;
+            height: 277px;
+            box-shadow: 5px 10px 27px $light-blue-hover;
+        }
+
+
+        //Premium
+        .premium {
+            @include pricing-container($green);
+
+            .pricing-detail ul li {
+                padding: .6rem 0;
+            }
+
+            .premium-p {
+                @include pricing-p ($green);
+                text-align: center;
+            }
+            
+            .pricing-btn {
+                @include pricing-btn ($green);
+            }
+            .pricing-btn:hover {
+                @include pricing-btn ($green-hover);
+                width: $pricing-btn-width *1.2;
+                height: $pricing-btn-height *1.1 ;
+            }
+        }
+
+        .premium:hover {
+            width: 339px;
+            height: 277px;
+            box-shadow: 5px 10px 27px $green-hover;
+        }
+
+    }
+
+}

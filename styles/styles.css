@@ -12,21 +12,87 @@ html {
 body {
   min-width: 320px;
   font-family: "Open Sans", "sans-serif";
-  font-style: normal; }
+  font-style: normal;
+  overscroll-behavior-y: none;
+  overflow-x: hidden; }
 
-.gotop {
+#progress-bar {
   position: fixed;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background: #08A6E4;
-  bottom: 20px;
-  right: 50px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 50px;
+  left: 0px;
+  top: 71px;
+  height: 8px;
+  background: linear-gradient(to right, #08A6E4, #FB3B64);
+  z-index: 100;
+  transition: width 0.2s ease-out;
+  border-radius: 5px; }
+
+.scrollToTop {
+  position: fixed;
+  bottom: 22px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: #078fc5 url(../assets/arrow-up-solid.svg);
   color: white;
-  font-size: 22px; }
+  border: none;
+  border-radius: 50%;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s; }
+
+.scrollToTop.active {
+  visibility: visible;
+  opacity: 1; }
+
+.newsletter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999;
+  padding-top: 20%;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .newsletter-modal .newsletter-bg {
+    width: 80%;
+    margin: 100px auto;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    text-align: center; }
+    .newsletter-modal .newsletter-bg .btn-container {
+      position: relative; }
+      .newsletter-modal .newsletter-bg .btn-container .newsletter-closeBtn {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        right: 0; }
+  .newsletter-modal #news-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 250px; }
+    .newsletter-modal #news-form form h3 {
+      color: #08A6E4;
+      font-size: 2rem; }
+    .newsletter-modal #news-form .form-group input {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #eee; }
+    .newsletter-modal #news-form .form-group button {
+      margin: 0;
+      padding: 10px;
+      border: none;
+      background-color: #08A6E4;
+      color: #FFFFFF;
+      cursor: pointer; }
 
 .header {
   position: fixed;
@@ -103,14 +169,14 @@ body {
           color: #95989A; }
         .header .nav-bar .nav-bar-ul li .nav-item:hover {
           color: #000000; }
-  .header .navInput:checked + .nav-bar-container .nav-bar {
+  .header .nav-bar.active {
     clip-path: circle(100% at center); }
-  .header .navInput:checked + .nav-bar-container .navLabel #span1 {
+  .header .navLabel.animation #span1 {
     transform: rotate(140deg);
     top: 10px; }
-  .header .navInput:checked + .nav-bar-container .navLabel #span2 {
+  .header .navLabel.animation #span2 {
     opacity: 0; }
-  .header .navInput:checked + .nav-bar-container .navLabel #span3 {
+  .header .navLabel.animation #span3 {
     transform: rotate(-140deg);
     top: 10px; }
 
@@ -581,6 +647,7 @@ body {
       box-shadow: 5px 10px 27px #29d69f; }
 
 #contact {
+  margin: 0 auto;
   padding: 1rem 2rem;
   margin: 4rem 0; }
   #contact .contact-container h2 {
@@ -624,8 +691,8 @@ body {
       align-self: flex-start;
       padding: 0 1em; }
     #contact .contact-form form .btn-submit-container {
-      justify-content: flex-end; }
-      #contact .contact-form form .btn-submit-container .btn-submit {
+      flex-direction: row-reverse; }
+      #contact .contact-form form .btn-submit-container #btn-submit {
         position: center;
         width: 226px;
         height: 57px;
@@ -637,6 +704,12 @@ body {
         justify-content: flex-end; }
       #contact .contact-form form .btn-submit-container .btn-submit:hover {
         background: #078fc5; }
+      #contact .contact-form form .btn-submit-container #warnings {
+        width: 200px;
+        text-align: center;
+        margin: auto;
+        color: #FB3B64;
+        padding-top: 1.2rem; }
 
 .footer {
   display: flex;

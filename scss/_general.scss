@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
+body {
+   min-width: 320px;
+   font-family: $font-text;
+   font-style: normal;
+   overscroll-behavior-y: none;
+   overflow-x: hidden;
+}
+
+#progress-bar {
+    position: fixed;
+    left: 0px;
+    top: 71px;
+    height: 8px;
+    background: linear-gradient(to right, $light-blue , $red);
+    z-index: 100;
+    transition: width 0.2s ease-out;
+    border-radius: 5px;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 22px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: $light-blue-hover url(../assets/arrow-up-solid.svg);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ;
+}
+
+.scrollToTop.active {
+    // bottom: 22px;
+    visibility: visible;
+    opacity: 1;
+}
+
+//Newsletter Modal
+
+.newsletter-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999;
+    padding-top: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .newsletter-bg {
+        width: 80%;
+        margin: 100px auto;
+        padding: 2rem;
+        background-color: $white;
+        text-align: center;
+        // display: flex;
+        // justify-content: center;
+    
+        .btn-container {
+            position: relative;
+            // top: 0;
+            // right: 0;
+    
+            .newsletter-closeBtn {
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                position: absolute;
+                top:0;
+                right: 0;
+                // margin: .5rem;
+            }
+        }
+    }
+
+    #news-form {
+        @include flex-column-container;
+        justify-content: space-around;
+        height: 250px;
+
+        form h3 {
+            color: $light-blue;
+            font-size: 2rem;
+        }
+        
+        .form-group input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+        
+        .form-group button {
+            margin:0;
+            padding: 10px;
+            border: none;
+            background-color: $light-blue;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
+
+

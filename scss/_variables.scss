@@ -1,0 +1,142 @@
+// FUENTES
+$font-title: 'Raleway' , 'sans-serif';
+$font-text: 'Open Sans' , 'sans-serif';
+
+// Sizes
+$full-width: 100%;
+
+// COLORS
+
+// Black & White
+$white: #FFFFFF;
+$black: #000000;
+$box-shadow:rgba(0, 0, 0, 0.29);
+// Ligth Blue
+$light-blue: #08A6E4;
+$light-blue-hover: #078fc5;
+$light-blue-shadow: rgba(7, 172, 230, 0.29) ; //#07ace64a
+// Blue
+$blue: #07ACE6;
+// Red
+$red: #FB3B64;
+$red-button: #EB476E;
+$red-hover: #DC4716;
+// Green
+$green: #55DFB4 ;
+$green-hover: #29d69f;
+$green-shadow: #55dfb44a;
+// Gray
+$gray: #95989A;
+$gray-text: #A5A5A5;
+$gray-border: #E8E9ED;
+$gray-background-wu: #E5E5E5;
+$gray-background: #F7F7F7;
+$gray-input-bottom: #95989A;
+$gray-check: #707070;
+
+// MIXINGS
+
+// Generales
+@mixin flex-row-container () {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column-container () {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Why us
+@mixin reasons-p {
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+    letter-spacing: 5.96px;
+    color: $black;
+}
+
+@mixin reasons-h3 {
+    width: 95px;
+    height: 1.25rem;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: $gray-text;
+}
+
+@mixin reasons-circle {
+    width: 62.71px;
+    height: 62.71px;
+    border-radius: 50%;
+    position: relative;
+}
+
+@mixin reasons-icon {
+    position: absolute;
+    width: 2.75rem;
+    height: 3.25rem;
+    left: 2rem;
+    top: 3px;
+}
+
+// Benefits
+
+
+
+
+// Pricing
+
+@mixin pricing-container ($border-color) {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    padding: 2rem 1rem;
+    align-items: center;
+    border: 1px solid $border-color;
+    border-radius: 18px;
+    width: 293px;
+    height: 251px;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+@mixin pricing-p ($color) {
+    width: 59px;
+    height: 64px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.875rem;
+    line-height: 64px;
+    color: $color;
+    text-align: center;
+}
+
+@mixin pricing-li {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+@mixin pricing-btn ($color) {
+    width: 150px;
+    height: 50px;
+    border-radius: 23px;
+    color: $white;
+    border: none;
+    background-color: $color;
+    position: absolute;
+    left: 25%;
+    top: 92%;
+    
+    pricin-btn:hover {
+        background-color: $color;
+    }
+}
+

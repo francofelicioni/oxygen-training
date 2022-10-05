@@ -1,0 +1,112 @@
+// @use '_variables';
+
+#contact {
+    // @include flex-row-container;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    margin: 4rem 0;
+
+    .contact-container {
+        h2 {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .contact-info {
+        margin: 2rem 0;
+         
+        div {
+            padding: 1rem 0;
+            
+            a {
+                // gap: 25px;
+                padding-left: 5px;
+                color: $gray-text;
+            }
+        }
+
+    }
+
+    .contact-form {
+        @include flex-column-container;
+
+         .label-title {
+            color: $light-blue;
+            padding: 2rem 0;
+            font-weight: 600;
+            font-size: 0.6875rem;
+            line-height: 0.9375rem;
+            letter-spacing: 3.28px;
+         }
+
+         input {
+            margin: 1rem 0;
+            padding: 1em;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $light-blue;
+        }
+         
+        div {
+            @include flex-row-container ;
+            padding: 1rem 0;
+        }
+
+        form {
+            .contact_form_checkbox {
+                align-self: flex-start;
+                padding: 0 1em;
+            }
+
+            .btn-submit-container {
+
+                flex-direction:row-reverse;
+
+                #btn-submit {
+                    position: center;
+                    width: 226px;
+                    height: 57px;   
+                    background: $light-blue;
+                    box-shadow: 5px 10px 14px $light-blue-shadow;
+                    border-radius: 35px;
+                    color: $white;
+                    border: none;
+                    justify-content: flex-end;
+                }
+
+                // #btn-submit::after {
+                //     position: center;
+                //     width: 226px;
+                //     height: 57px;   
+                //     background: $green;
+                //     box-shadow: 5px 10px 14px $green;
+                //     border-radius: 35px;
+                //     color: $white;
+                //     border: none;
+                //     justify-content: flex-end;
+                // }
+
+                .btn-submit:hover {
+                    background: $light-blue-hover;
+                }
+
+                #warnings {
+                    width: 200px;
+                    text-align: center;
+                    margin: auto;
+                    color: $red;
+                    padding-top: 1.2rem;
+                }
+                
+            }
+        }
+    }
+}

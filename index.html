@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f08ee61626.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/styles.css">
     <title>OXYGEN Shop</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
         <a href="#" class="logo"><p>OXIGENShop</p></a>
-        <!-- <input type="checkbox" id="menu" class="menuInput"> -->
-        <input type="checkbox" id="menu" class="navInput">
+        <!-- <input type="checkbox" id="menu" class="navInput"> -->
         <div class="nav-bar-container">
             <label for="menu" class="navLabel">
-                <!-- <img src="./assets/burger-menu.svg" class="navImg">
-                <img src="./assets/x.svg" class="navImg-x"> -->
                 <span id="span1"></span>
                 <span id="span2"></span>
                 <span id="span3"></span>
@@ -31,6 +27,7 @@
             </nav>
         </div>
     </header>
+    <div id="progress-bar"></div>
     <div id="why-us">
         <div class="why-us_fc">
             <h1 class="why-us_fc_title">Sell More!</h1>
@@ -226,17 +223,22 @@
         </div>
         <div>
             <div class="contact-form">
-                <form>
-                    <label class="label-title">NAME</label><br>
-                    <input type="text"><br>
-                    <label class="label-title">EMAIL</label><br>
-                    <input type="email"><br>
-                    <div>
-                        <input type="checkbox" class="contact_form_checkbox">
+                <form action="" method="POST" id="form">
+                    <div class="group">
+                        <label for="" class="label-title">NAME</label><br>
+                        <input type="text" name="" id="name"><br>
+                    </div>
+                    <div class="group">
+                        <label for="" class="label-title">EMAIL</label><br>
+                        <input type="email" name="" id="email"><br>
+                    </div>
+                    <div class="group">
+                        <input type="checkbox" class="contact_form_checkbox" id="checkbox">
                         <label>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</label><br>
                     </div>
                     <div class="btn-submit-container">
-                        <button type="submit" class="btn-submit">Send</button>
+                        <button type="submit" id="btn-submit">Send</button>
+                        <p id="warnings"></p>
                     </div>   
                 </form>
             </div>
@@ -252,6 +254,22 @@
             <a href="facebook.com"><img src="./assets/facebook.jpg" /></a>
         </div>
     </footer>
-    <!-- <a class="gotop" href="#"><i class="fa-solid fa-arrow-up"></i></a> -->
+    <div class='newsletter-modal'>
+        <div class="newsletter-bg">
+            <div class="btn-container">
+                <button class='newsletter-closeBtn'>X</button>
+            </div>
+            <form id='news-form'>
+                <h3>Newsletter Registration</h3>
+                <p>Enter your email to sign up for our weekly newsletter and to get discounts in our services!</p>
+                <div class='form-group'>
+                    <input type="email" name="email" id="email-newsletter" placeholder="Enter your Email">
+                    <button id='submit-btn' type="submit"> Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <button class="scrollToTop"></button>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
