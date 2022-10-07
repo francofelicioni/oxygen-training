@@ -17,4 +17,5 @@ Welcome to the module 1 of Fullstack React training w. [Oxygen Academy](https://
 <h2>Autor ✒️</h2>
 <!-- The project was done by: -->
 
+:point_down: :point_down: :point_down: Vaya pedazo de máquina este :exploding_head: 
 Franco Felicioni - [Linkedin](https://www.linkedin.com/in/francofelicioni/)
