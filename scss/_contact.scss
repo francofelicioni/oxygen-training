@@ -40,7 +40,7 @@
 
          .label-title {
             color: $light-blue;
-            padding: 2rem 0;
+            padding: .5rem 0;
             font-weight: 600;
             font-size: 0.6875rem;
             line-height: 0.9375rem;
@@ -48,7 +48,7 @@
          }
 
          input {
-            margin: 1rem 0;
+            margin: .5rem 0;
             padding: 1em;
             width: 100%;
             border: none;
@@ -66,6 +66,25 @@
                 padding: 0 1em;
             }
 
+            .group {
+                @include flex-column-container;
+                align-items: start;
+                    p {
+                        color: red;
+                    }
+            }
+
+            .group:nth-child(3) {
+                flex-direction: row;
+                align-items: start;
+            }
+
+            .warning-checkbox-p {
+                text-align: right;
+                color: red;
+                padding: .5rem;
+            }
+
             .btn-submit-container {
 
                 flex-direction:row-reverse;
@@ -80,31 +99,25 @@
                     color: $white;
                     border: none;
                     justify-content: flex-end;
+                    cursor: pointer;
                 }
-
-                // #btn-submit::after {
-                //     position: center;
-                //     width: 226px;
-                //     height: 57px;   
-                //     background: $green;
-                //     box-shadow: 5px 10px 14px $green;
-                //     border-radius: 35px;
-                //     color: $white;
-                //     border: none;
-                //     justify-content: flex-end;
-                // }
 
                 .btn-submit:hover {
                     background: $light-blue-hover;
                 }
 
-                #warnings {
-                    width: 200px;
-                    text-align: center;
-                    margin: auto;
-                    color: $red;
-                    padding-top: 1.2rem;
-                }
+                // .warnings {
+                //    display: flex;
+                //    flex-direction: column;
+                //    justify-content: space-around;
+
+                //     p {
+                //         width: 200px;
+                //         color: red;
+                //         font-weight: 500;
+                //         padding: 0 1rem;
+                //     }
+                // }
                 
             }
         }

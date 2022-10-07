@@ -8,7 +8,7 @@ $pricing-btn-height: 50px;
 }
 
 #pricing {
-
+    // width: 100%;
     margin-top: 2rem;
 
     .pricing-title {
@@ -17,6 +17,19 @@ $pricing-btn-height: 50px;
         font-size: 36px;
         line-height: 42px;
     }
+
+    .currencySelectorContainer {
+        padding: 2rem 0 .5rem 0;
+        display: flex;
+        justify-content: center;
+
+        .currencySelector {
+            align-self: center;
+            padding: .5rem;
+            border: 1px solid $light-blue;
+        }
+    }
+
 
     .pricing-container-title {
         @include flex-column-container();
@@ -62,12 +75,9 @@ $pricing-btn-height: 50px;
 
         }
 
-        
-
-        
         .basic:hover, .premium:hover, .professional:hover  {
-            width: 339px;
-            height: 277px;
+            width: 360px;
+            height: 300px;
             box-shadow: 5px 10px 27px $red;
 
             .pricing-btn {
@@ -75,11 +85,6 @@ $pricing-btn-height: 50px;
                 height: $pricing-btn-height *1.1 ;
             }
         }
-
-        // .pricing-btn:hover {
-        //     width: $pricing-btn-width *1.2;
-        //     height: $pricing-btn-height *1.1 ;
-        // }
 
         // Professional
         .professional {
@@ -105,8 +110,8 @@ $pricing-btn-height: 50px;
         }
 
         .professional:hover {
-            width: 339px;
-            height: 277px;
+            // width: 339px;
+            // height: 277px;
             box-shadow: 5px 10px 27px $light-blue-hover;
         }
 
@@ -135,8 +140,8 @@ $pricing-btn-height: 50px;
         }
 
         .premium:hover {
-            width: 339px;
-            height: 277px;
+            // width: 339px;
+            // height: 277px;
             box-shadow: 5px 10px 27px $green-hover;
         }
 

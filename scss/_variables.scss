@@ -99,20 +99,22 @@ $gray-check: #707070;
     align-items: center;
     border: 1px solid $border-color;
     border-radius: 18px;
-    width: 293px;
-    height: 251px;
+    width: 339px;
+    height: 277px;
     position: relative;
     transition: 0.3s;
 }
 
 
 @mixin pricing-p ($color) {
-    width: 59px;
+    width: 100%;
+    // width: 59px;
     height: 64px;
+    padding: .5rem 0;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
-    font-size: 2.875rem;
+    font-size: 3rem;
     line-height: 64px;
     color: $color;
     text-align: center;

@@ -42,21 +42,21 @@
             <div class="why-us_sc_reasons">
                 <div class="why-us_sc_reasons_1">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./assets/person.svg" />
+                        <img src="./assets/icons/person.svg" />
                     </div>
                     <p>100000+</p>
                     <h3>daily entries</h3>
                 </div>
                 <div class="why-us_sc_reasons_2">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./assets/eye.svg" />
+                        <img src="./assets/icons/eye.svg" />
                     </div>
                     <p>2000000+</p>
                     <h3>seen products every day</h3>
                 </div>
                 <div class="why-us_sc_reasons_3">
                     <div class="why-us_sc_reasons_img">
-                        <img src="./assets/catalog.svg" />
+                        <img src="./assets/icons/catalog.svg" />
                     </div>
                     <p>10000+</p>
                     <h3>added post daily</h3>
@@ -106,6 +106,13 @@
     </div>
     <div id="pricing">
         <h2 class="pricing-title">Pricing</h2>
+        <div class="currencySelectorContainer">
+            <select class="currencySelector">
+                <option class="usd">USD</option>
+                <option class="eur">EUR</option>
+                <option class="pound">GBP</option>
+            </select>
+        </div>
         <div class="pricing-container">
             <div class="basic">
                 <div class="pricing-container-title">
@@ -225,21 +232,24 @@
             <div class="contact-form">
                 <form action="" method="POST" id="form">
                     <div class="group">
-                        <label for="" class="label-title">NAME</label><br>
-                        <input type="text" name="" id="name"><br>
+                        <label for="" class="label-title">NAME</label>
+                        <input type="text" name="" id="name">
+                        <p id="warning-name"></p>
                     </div>
                     <div class="group">
-                        <label for="" class="label-title">EMAIL</label><br>
-                        <input type="email" name="" id="email"><br>
+                        <label for="" class="label-title">EMAIL</label>
+                        <input type="email" name="" id="email">
+                        <p id="warning-email"></p>
                     </div>
                     <div class="group">
                         <input type="checkbox" class="contact_form_checkbox" id="checkbox">
-                        <label>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</label><br>
+                        <label>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</label>
                     </div>
+                    
                     <div class="btn-submit-container">
                         <button type="submit" id="btn-submit">Send</button>
-                        <p id="warnings"></p>
-                    </div>   
+                        <p id="warning-checkbox" class="warning-checkbox-p"></p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -254,22 +264,25 @@
             <a href="facebook.com"><img src="./assets/facebook.jpg" /></a>
         </div>
     </footer>
+
+    <!-- MODAL -->
     <div class='newsletter-modal'>
         <div class="newsletter-bg">
             <div class="btn-container">
                 <button class='newsletter-closeBtn'>X</button>
             </div>
-            <form id='news-form'>
+            <form action="" method="POST" id='news-form'>
                 <h3>Newsletter Registration</h3>
                 <p>Enter your email to sign up for our weekly newsletter and to get discounts in our services!</p>
                 <div class='form-group'>
-                    <input type="email" name="email" id="email-newsletter" placeholder="Enter your Email">
-                    <button id='submit-btn' type="submit"> Sign Up</button>
+                    <input type="email" name="email" id="input-newsletter" placeholder="Enter your Email">
+                    <button id='btn-submit-modal' type="submit"> Sign Up</button>
+                    <p id="warning-newsletter-email"></p>
                 </div>
             </form>
         </div>
     </div>
     <button class="scrollToTop"></button>
-    <script src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
 </body>
 </html>

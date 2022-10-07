@@ -36,7 +36,7 @@ body {
     right: 10px;
     width: 40px;
     height: 40px;
-    background: $light-blue-hover url(../assets/arrow-up-solid.svg);
+    background: $light-blue-hover url(../assets/icons/arrow-up-solid.svg);
     color: white;
     border: none;
     border-radius: 50%;
@@ -65,7 +65,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 9999999;
-    padding-top: 20%;
+    padding-top: 50px;
     background-color: rgba(0, 0, 0, 0.5);
 
     .newsletter-bg {
@@ -117,6 +117,12 @@ body {
             background-color: $light-blue;
             color: $white;
             cursor: pointer;
+        }
+
+        .form-group p {
+            color: red;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
         }
     }
 }
