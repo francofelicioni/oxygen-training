@@ -6,21 +6,14 @@
     height: auto;
     position: relative;
     overflow: hidden;
-
-    .mySlider {
-        // display: none;
-        // transition: 2s;
-        // max-height: 100vh;
     
-        img {
-            width: 100%;
-            max-height: 100vh;
-            height: inherit;
-            object-fit: cover;
-            vertical-align: top;
-            transition: 2s;
-    
-        }
+    img {
+        width: 100%;
+        max-height: 100vh;
+        height: inherit;
+        object-fit: cover;
+        vertical-align: top;
+        transition: 2s;
     }
 
     .fade {
@@ -33,7 +26,7 @@
         to {opacity: 1;}
     }
 
-    .directions {
+    .slider_directions {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -43,36 +36,36 @@
         align-items: center;
         font-size: 20px;
         
-        a {
+        .slider_directions_back , .slider_directions_foward {
+            cursor: pointer;
             color: #fff;
             display: inline-block;
             padding: 20px;
             text-decoration: none;
         }
-    }
 
-    .directions a:hover {
-        background: rgba(0,0,0,0.5);
-        transition: .5s;
+        .slider_directions_back:hover, .slider_directions_foward:hover {
+            background: rgba(0,0,0,0.5);
+            transition: .5s;
+        }
     }
-
-    .bars {
+    
+    .slider_dots {
         position: absolute;
         bottom:0;
         width: 100%;
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
-        // padding: 0 10px;
+        gap: 10px;
     
-        .bar {
+        .dot {
             cursor: pointer;
-            height: 2px;
-            width: 25px;
-            margin: 0 2px;
-            background: $white;
-            display: inline-block;
-            margin-left: 3px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: none;
+            background-color: $gray-background;
         }
 
         .active {

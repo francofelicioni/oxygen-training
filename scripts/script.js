@@ -1,5 +1,7 @@
 import REGEX from '../utils/constants.js';
 import {sendInfo, sendData, getRatesGBP, getRatesEUR} from '../services/api.js';
+const url = 'https://jsonplaceholder.typicode.com/posts'
+const urlRates = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json';
 
 // Burger Menu
 let burgerMenu = document.querySelector('.navLabel');
@@ -13,22 +15,19 @@ burgerMenu.addEventListener ('click', () => {
 // Progress Bar
 const progressBar = document.querySelector('#progress-bar');
 const body = document.querySelector('.body');
-let wasDisplayed = localStorage.getItem('newsletterDisplayed');
+// let wasDisplayed = localStorage.getItem('newsletterDisplayed');
+
+let valueSroll = 0;
 
 const animateProgressBar = () => {
     let scrollDistance = -body.getBoundingClientRect().top;
     let progressWidth = (scrollDistance / (body.getBoundingClientRect().height - document.documentElement.clientHeight))*100;
-    let value = (progressWidth.toFixed(0));
-    progressBar.style.width = value + '%';
-    if (value < 0) {
+    valueSroll = (progressWidth.toFixed(0));
+    progressBar.style.width = valueSroll + '%';
+    if (valueSroll < 0) {
         progressBar.style.width = '0%'; 
     }
-
-    if(!localStorage.newsletterDisplayed && value >= 25) {
-        newsletter.style.display ='block';
-        localStorage.setItem ('newsletterDisplayed', 'true');
-        console.log ('modal desde scroll');
-    };
+    showModal(valueSroll);
 };
 
 window.addEventListener('scroll', animateProgressBar);
@@ -55,6 +54,7 @@ returnToTopBtn.addEventListener("click", () => {
 const form = document.getElementById('form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
+const checkbox = document.getElementById ('checkbox');
 let warningName = document.getElementById('warning-name');
 let warningEmail = document.getElementById('warning-email');
 let warningCheckbox = document.getElementById('warning-checkbox');
@@ -63,14 +63,18 @@ let warningCheckbox = document.getElementById('warning-checkbox');
 let regexName= REGEX.name;
 let regexEmail = REGEX.email;
 
+let isNameOk = false;
+let isEmailOk = false;
 
 name.addEventListener ('keyup', ()=> {
     if (!regexName.test(name.value)) {
         name.style.border = '2px solid red';
         warningName.innerHTML = `The name is not valid`;
+        isNameOk = false;
     } else {
         name.style.border = '2px solid green';
         warningName.innerHTML = '';
+        isNameOk = true;
     }
 })
 
@@ -78,24 +82,38 @@ email.addEventListener ('keyup', ()=> {
     if (!regexEmail.test(email.value)) {
         email.style.border = '2px solid red';
         warningEmail.innerHTML = `The email address is not valid`;
+        isEmailOk = false;
     } else {
         email.style.border = '2px solid green';
         warningEmail.innerHTML = '';
+        isEmailOk = true;
+    }
+})
+
+
+checkbox.addEventListener ('change', ()=> {
+    const isChecked = document.getElementById('checkbox').checked;
+    if (!isChecked) {
+        warningCheckbox.innerHTML = `You have to accept our policies`;
+    } else {
+        warningCheckbox.innerHTML = '';
     }
 })
 
 form.addEventListener('submit', (e) => {
-    const url = 'https://jsonplaceholder.typicode.com/posts';
     e.preventDefault();
-    const isChecked = document.getElementById('checkbox').checked;
-    if (!isChecked) {
-        warningCheckbox.innerHTML = `First you have to accept our policies`;
-    }  else {
-        warningCheckbox.innerHTML = '';
-        
-        // let nameValue = name.value;
-        // let emailValue = email.value;
-        sendInfo (url, name.value, email.value);
+    if (isEmailOk && isNameOk) {
+        const isChecked = document.getElementById('checkbox').checked;
+        if (!isChecked) {
+            warningCheckbox.innerHTML = `First you have to accept our policies`;
+        }  else {
+            warningCheckbox.innerHTML = '';
+            sendInfo (url, name.value, email.value);
+        }
+        warningCheckbox.style.color ='green';
+        warningCheckbox.innerHTML = `Message sent successfully`;
+    } else {
+        warningCheckbox.innerHTML = `You have incomplete or incorrect fields`;
     }
 })
 
@@ -109,16 +127,13 @@ let warningNewsletterEmail = document.getElementById('warning-newsletter-email')
 let emailIsCorrect = false;
 
 
-
-if (!localStorage.newsletterDisplayed) {
-    // window.addEventListener ('load', () => {
-        setTimeout (()=> {
-            newsletter.style.display ='block';
-            localStorage.setItem ('newsletterDisplayed', 'true');
-            console.log ('modal asincrónico')
-        }, 5000);
-    // });
-}
+setTimeout(()=> {
+    if (!localStorage.getItem('newsletterDisplayed')){
+        newsletter.style.display ='block';
+        localStorage.setItem ('newsletterDisplayed', 'true');
+        console.log ('modal asincrónico')
+    }
+},5000)
 
 newsletter.addEventListener ('click', e => {
     if (e.target == newsletter) {
@@ -147,15 +162,21 @@ inputNewsletter.addEventListener ('keyup', ()=>{
 newsForm.addEventListener ('submit', (e) => {
     console.log('Entra al submit');
     e.preventDefault();
-    // let inputNewsletter.value
-    const url = 'https://jsonplaceholder.typicode.com/posts';
-    emailIsCorrect ? (sendData(url, inputNewsletter.value) (newsletter.style.display = 'none')) : null;
+    if (emailIsCorrect == true) {
+        sendData(url, inputNewsletter.value)
+        console.log('Data is ok') 
+        warningNewsletterEmail.innerHTML = 'Successful subscription';
+        warningNewsletterEmail.style.color = 'green';
+    } else {
+        warningNewsletterEmail.innerHTML = 'The email address is not valid';
+        warningNewsletterEmail.classList.add = 'error';
+        warningNewsletterEmail.style.color = 'red';
+    }
 })
 
 // Get Rates - Pricing
 
 
-const urlRates = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json';
 const currencySelector = document.querySelector('.currencySelector');
 console.log(currencySelector.value);
 
@@ -177,3 +198,67 @@ currencySelector.addEventListener('change', () => {
         premPrice.innerText = `$60`;
     }
 })
+
+// Slider
+
+let index = 0;
+let slides = document.querySelectorAll('.slider_img');
+let dots = document.querySelectorAll('.dot');
+// console.log (slides.length, dots.length)
+
+const showSlide = (n) => {
+    for (let index = 0; index < slides.length; index++) {
+        slides[index].style.display = 'none'
+        dots[index].classList.remove ('active');
+    }
+
+    slides[n].style.display='block';
+    dots[n].classList.add('active');
+}
+
+const moveSlide = (n) => {
+    index += n;
+
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = slides.length -1;
+    }
+
+    showSlide(index);
+}
+
+for (let index = 0; index < dots.length; index++) {
+    dots[index].addEventListener ('click', ()=> {
+        showSlide(index);
+    });
+}
+
+setInterval (function time () {
+    moveSlide(1);
+}, 3500);
+
+let prev = document.querySelector('.slider_directions_back');
+let next = document.querySelector('.slider_directions_foward');
+
+prev.addEventListener ('click', ()=> {
+    moveSlide(-1);
+    console.log('prev');
+})
+
+next.addEventListener ('click', ()=> {
+    moveSlide(1);
+    console.log('next');
+})
+
+
+// Show modal by Scrolling
+const showModal = (value)=> {
+    if(!localStorage.getItem('newsletterDisplayed') && value >= 25) {
+        newsletter.style.display ='block';
+        localStorage.setItem ('newsletterDisplayed', 'true');
+        console.log ('modal desde scroll');
+    };
+}

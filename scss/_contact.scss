@@ -80,7 +80,7 @@
             }
 
             .warning-checkbox-p {
-                text-align: right;
+                text-align: left;
                 color: red;
                 padding: .5rem;
             }
@@ -88,6 +88,8 @@
             .btn-submit-container {
 
                 flex-direction:row-reverse;
+                justify-content: space-between;
+                gap: 10px;
 
                 #btn-submit {
                     position: center;
@@ -106,19 +108,6 @@
                     background: $light-blue-hover;
                 }
 
-                // .warnings {
-                //    display: flex;
-                //    flex-direction: column;
-                //    justify-content: space-around;
-
-                //     p {
-                //         width: 200px;
-                //         color: red;
-                //         font-weight: 500;
-                //         padding: 0 1rem;
-                //     }
-                // }
-                
             }
         }
     }
