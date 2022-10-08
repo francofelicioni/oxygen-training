@@ -24,9 +24,7 @@ const animateProgressBar = () => {
     let progressWidth = (scrollDistance / (body.getBoundingClientRect().height - document.documentElement.clientHeight))*100;
     valueSroll = (progressWidth.toFixed(0));
     progressBar.style.width = valueSroll + '%';
-    if (valueSroll < 0) {
-        progressBar.style.width = '0%'; 
-    }
+    valueSroll < 0 ? progressBar.style.width = '0%' : null;
     showModal(valueSroll);
 };
 
@@ -109,9 +107,10 @@ form.addEventListener('submit', (e) => {
         }  else {
             warningCheckbox.innerHTML = '';
             sendInfo (url, name.value, email.value);
+            console.log(sendInfo);
+            warningCheckbox.style.color ='green';
+            warningCheckbox.innerHTML = `Message sent successfully`;
         }
-        warningCheckbox.style.color ='green';
-        warningCheckbox.innerHTML = `Message sent successfully`;
     } else {
         warningCheckbox.innerHTML = `You have incomplete or incorrect fields`;
     }
@@ -136,15 +135,16 @@ setTimeout(()=> {
 },5000)
 
 newsletter.addEventListener ('click', e => {
-    if (e.target == newsletter) {
-        newsletter.style.display = 'none';
-    }
+    e.target === newsletter ? newsletter.style.display = 'none' : null;
 });
 
 newsletterCloseBtn.addEventListener ('click', () => {
     newsletter.style.display = 'none';
 })
 
+window.addEventListener ('keyup', (e) => {
+    e.key === 'Escape' ? newsletter.style.display = 'none' : null;
+})
 
 inputNewsletter.addEventListener ('keyup', ()=>{
     if (!regexEmail.test(inputNewsletter.value)) {
@@ -175,7 +175,6 @@ newsForm.addEventListener ('submit', (e) => {
 })
 
 // Get Rates - Pricing
-
 
 const currencySelector = document.querySelector('.currencySelector');
 console.log(currencySelector.value);
@@ -218,15 +217,8 @@ const showSlide = (n) => {
 
 const moveSlide = (n) => {
     index += n;
-
-    if (index >= slides.length) {
-        index = 0;
-    }
-
-    if (index < 0) {
-        index = slides.length -1;
-    }
-
+    index >= slides.length ? index = 0 : null;
+    index < 0 ? index=slides.length -1 : null;
     showSlide(index);
 }
 
@@ -238,19 +230,17 @@ for (let index = 0; index < dots.length; index++) {
 
 setInterval (function time () {
     moveSlide(1);
-}, 3500);
+}, 4000);
 
 let prev = document.querySelector('.slider_directions_back');
 let next = document.querySelector('.slider_directions_foward');
 
 prev.addEventListener ('click', ()=> {
     moveSlide(-1);
-    console.log('prev');
 })
 
 next.addEventListener ('click', ()=> {
     moveSlide(1);
-    console.log('next');
 })
 
 
