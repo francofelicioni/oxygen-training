@@ -200,20 +200,6 @@ currencySelector.addEventListener('change', () => {
 
 // Slider
 
-// class Slider {
-//     constructor (id) {
-//         this.id = id;
-//     }
-// }
-
-// class Slider {
-//     constructor(id){
-//         this.id = id;
-//         this.slider = document.getElementById(this.id);
-//         this.sliderLength = this.slider.children.length;
-//     }
-// }
-
 let index = 0;
 let slides = document.querySelectorAll('.slider_img');
 let dots = document.querySelectorAll('.dot');
